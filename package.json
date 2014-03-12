@@ -1,0 +1,31 @@
+{
+  "name": "promise-array",
+  "version": "0.0.0",
+  "description": "PromiseArray - Work with Array of Promises as with simple values",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/RReverser/promise-array.git"
+  },
+  "keywords": [
+    "promise",
+    "async",
+    "array"
+  ],
+  "author": "Ingvar Stepanyan <me@rreverser.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RReverser/promise-array/issues"
+  },
+  "dependencies": {
+    "es6-promise": "~0.1.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "chai": "~1.9.0",
+    "mocha-as-promised": "~2.0.0"
+  }
+}
