@@ -21,11 +21,10 @@
     "url": "https://github.com/RReverser/promise-array/issues"
   },
   "dependencies": {
-    "es6-promise": "~0.1.1"
+    "when": "^2.8.0"
   },
   "devDependencies": {
-    "mocha": "~1.17.1",
-    "chai": "~1.9.0",
-    "mocha-as-promised": "~2.0.0"
+    "mocha": "^1.18.0",
+    "chai": "^1.9.0"
   }
 }
