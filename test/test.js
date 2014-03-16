@@ -3,13 +3,47 @@ var assert = require('chai').assert,
 	when = require('when'),
 	delay = require('when/delay');
 
-describe('should have own implementation', function () {
+describe('has own implementation', function () {
 	Object.getOwnPropertyNames(Array.prototype)
 	.filter(function (name) { return !(name in Object.prototype) })
 	.forEach(function (name) {
 		it('of ' + name, function () {
 			assert.ok(PArray.prototype.hasOwnProperty(name));
 		});
+	});
+});
+
+describe('rejects modifying methods', function () {
+	var a = new PArray([1, 2, 3]);
+
+	function assertReject(promise) {
+		return promise.then(
+			function () { assert.ok(false) },
+			function () { assert.ok(true) }
+		);
+	}
+
+	it('push', function () {
+		return assertReject(a.push(4));
+	});
+
+	it('pop', function () {
+		return assertReject(a.pop());
+	});
+
+	it('push', function () {
+		return assertReject(a.shift());
+	});
+
+	it('unshift', function () {
+		return assertReject(a.unshift(0));
+	});
+
+	it('splice', function () {
+		return when.all([
+			assertReject(a.splice(0, 1)),
+			assertReject(a.splice(1, 1, 10))
+		]);
 	});
 });
 
